@@ -4,10 +4,11 @@ import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Product {
-	
+	@Id
 	private Long id;
 	
 	private String name;
@@ -37,6 +38,11 @@ public class Product {
 
 	public void setAtCreate(LocalDateTime atCreate) {
 		creationDate = atCreate;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", creationDate=" + creationDate + "]";
 	}
 	
 	
